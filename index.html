@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRC - 로봇 공학동아리</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="logo">MRC</h1>
+        <p class="tagline">함께 만들고, 코딩하고, 성장하는 로봇 공학동아리</p>
+        <div class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12l7 7 7-7"></path>
+            </svg>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- 1. MRC 소개 섹션 -->
+        <section id="about">
+            <h2>MRC 소개</h2>
+            <div class="card-highlight">
+                <p><strong>MRC</strong>는 학생들이 로봇과 기계를 직접 설계, 제작, 프로그래밍하는 창의적인 동아리입니다. 이론을 넘어 실전 경험을 중요시하며, 다양한 프로젝트를 통해 로봇공학의 재미를 경험합니다.</p>
+            </div>
+            
+            <div class="intro-grid">
+                <div class="intro-item">
+                    <div class="intro-icon">
+                        <img src="img/설계 제작 아이콘.png" alt="설계 및 제작" />
+                    </div>
+                    <h4>설계 & 제작</h4>
+                    <p>3D 모델링, 프로토타입 제작, 기계 부품 가공</p>
+                </div>
+                <div class="intro-item">
+                    <div class="intro-icon">
+                        <img src="img/프로그래밍 아이콘.png" alt="프로그래밍" />
+                    </div>
+                    <h4>프로그래밍</h4>
+                    <p>아두이노, EV3를 활용한 로봇 프로그래밍</p>
+                </div>
+                <div class="intro-item">
+                    <div class="intro-icon">
+                        <img src="img/드론 이미지.png" alt="드론 프로젝트" />
+                    </div>
+                    <h4>드론 프로젝트</h4>
+                    <p>드론 활용 기술 실험 및 개발</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 2. MRC의 의미 섹션 -->
+        <section id="meaning">
+            <h2>MRC의 의미</h2>
+            <div class="meaning-container">
+                <div class="meaning-box m-box">
+                    <h3>
+                        <span>M</span>
+                        <span class="letter ghost">e</span>
+                        <span class="letter ghost">c</span>
+                        <span class="letter ghost">h</span>
+                        <span class="letter ghost">a</span>
+                        <span class="letter ghost">n</span>
+                        <span class="letter ghost">i</span>
+                        <span class="letter ghost">c</span>
+                        <span class="letter ghost">a</span>
+                        <span class="letter ghost">l</span>
+                    </h3>
+                    <p class="summary">다양한 기계 구조물을 직접 설계하고 제작하는 메카닉 활동</p>
+                    <div class="detail-content">
+                        <p>3D 모델링을 활용해 설계를 구체화하고, 이를 실제로 제작하여 프로토타입을 완성합니다. 드릴, 톱, 3D 프린터 등의 도구를 활용해 기계 부품을 가공하며, 구조적 안정성과 효율성을 고려한 제작 방법을 익힙니다.</p>
+                    </div>
+                    <button class="toggle-btn">더 보기</button>
+                </div>
+                
+                <div class="meaning-box r-box">
+                    <h3>
+                        <span>R</span>
+                        <span class="letter ghost">o</span>
+                        <span class="letter ghost">b</span>
+                        <span class="letter ghost">o</span>
+                        <span class="letter ghost">t</span>
+                        <span class="letter ghost">i</span>
+                        <span class="letter ghost">c</span>
+                        <span class="letter ghost">s</span>
+                    </h3>
+                    <p class="summary">실제로 움직이고 작동하는 로봇을 개발하는 로보틱스 활동</p>
+                    <div class="detail-content">
+                        <p>EV3와 아두이노 같은 마이크로컨트롤러를 활용해 로봇을 프로그래밍하며, 모터와 센서를 결합해 다양한 기능을 구현합니다. 라인 트레이싱 로봇, 자율 주행 시스템, 로봇 팔 제어 등 여러 프로젝트를 진행하며, 하드웨어와 소프트웨어의 융합을 직접 경험할 수 있습니다.</p>
+                    </div>
+                    <button class="toggle-btn">더 보기</button>
+                </div>
+                
+                <div class="meaning-box c-box">
+                    <h3>
+                        <span>C</span>
+                        <span class="letter ghost">l</span>
+                        <span class="letter ghost">u</span>
+                        <span class="letter ghost">b</span>
+                    </h3>
+                    <p class="summary">함께 배우고 성장하는 커뮤니티 활동</p>
+                    <div class="detail-content">
+                        <p>MRC는 단순히 로봇을 만드는 곳이 아니라, 같은 관심사를 가진 사람들이 모여 함께 배우고 성장하는 공간입니다. 프로젝트를 진행하며 아이디어를 나누고, 문제를 해결하는 과정에서 자연스럽게 협업 능력이 길러집니다. 자유로운 분위기 속에서 각자의 속도에 맞춰 배우며, 실험과 도전을 통해 더 나은 결과를 만들어갑니다.</p>
+                    </div>
+                    <button class="toggle-btn">더 보기</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. 프로젝트 소개 섹션 -->
+        <section id="projects">
+            <h2>MRC 프로젝트</h2>
+            <div class="card-highlight">
+                <p>다양한 프로젝트를 통해 로봇과 기계를 직접 만들고 프로그래밍하는 경험을 쌓습니다.</p>
+            </div>
+            
+            <div class="project-container">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/EV3 로봇.jpg" alt="EV3 로봇" />
+                    </div>
+                    <div class="project-content">
+                        <h3>EV3 로봇제작 & 코딩</h3>
+                        <p class="summary">레고 마인드스톰 EV3를 활용한 로봇 제작 및 프로그래밍 활동</p>
+                        <div class="detail-content">
+                            <p>레고 마인드스톰 EV3를 활용해 다양한 로봇을 제작하고 프로그래밍합니다. 기본적인 조립부터 시작해, 센서를 이용한 라인트레이싱, 장애물 회피, 미션 수행 로봇까지 개발합니다.</p>
+                        </div>
+                        <button class="toggle-btn">더 보기</button>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/아두이노 미니게임.jpg" alt="아두이노 미니게임" />
+                    </div>
+                    <div class="project-content">
+                        <h3>아두이노 미니게임 개발</h3>
+                        <p class="summary">아두이노를 활용한 다양한 미니게임 개발 프로젝트</p>
+                        <div class="detail-content">
+                            <p>아두이노를 활용해 LED, 버튼, 센서 등을 조합하여 다양한 미니게임을 제작합니다. 예를 들어, 반응 속도를 테스트하는 게임, 점수를 기록하는 간단한 게임 시스템 등을 직접 프로그래밍하여 개발합니다.</p>
+                            <p>하드웨어와 소프트웨어가 결합된 프로젝트를 통해 논리적 사고력과 창의적인 문제 해결 능력을 기를 수 있습니다.</p>
+                        </div>
+                        <button class="toggle-btn">더 보기</button>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/나무 자동차.jpg" alt="나무 자동차" />
+                    </div>
+                    <div class="project-content">
+                        <h3>직접 만든 나무 자동차</h3>
+                        <p class="summary">실제로 탑승 가능한 나무 자동차 설계 및 제작 프로젝트</p>
+                        <div class="detail-content">
+                            <p>단순한 로봇 제작을 넘어, 실제로 움직이고 사람이 탈 수 있는 나무 자동차를 직접 설계하고 제작했습니다. 차체를 나무로 제작하고, 바퀴, 모터, 조향 장치를 조립하여 실제로 주행할 수 있도록 만들었습니다.</p>
+                            <p>이 프로젝트를 통해 기계 구조의 원리를 익히고, 제작 과정에서 발생하는 문제를 해결하는 경험을 쌓았습니다.</p>
+                        </div>
+                        <button class="toggle-btn">더 보기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conclusion">
+                <p>MRC에서는 이처럼 다양한 프로젝트를 통해 직접 만들고 실험하며 배우는 즐거움을 경험할 수 있습니다!</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <!-- 4. 신청링크 섹션 -->
+        <section id="join">
+            <h2>지원 방법</h2>
+            <div class="join-info">
+                <p>아래 버튼을 클릭하여 지원 양식을 작성해주세요. 간단한 자기소개와 함께 로봇이나 기계공학에 관심을 가지게 된 계기를 알려주시면 됩니다.</p>
+                <p>선발 과정 없이 관심과 열정만 있다면 누구나 함께할 수 있습니다.</p>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://www.youtube.com/watch?v=ia1Yj6WBA9Q" target="_blank" class="join-btn">MRC 지원하기</a>
+            </div>
+        </section>
+        <p>© 2025 MRC 로봇 공학동아리 | 문의: 010-1234-5678</p>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>

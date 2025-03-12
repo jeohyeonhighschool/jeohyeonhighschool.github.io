@@ -1,0 +1,651 @@
+/* 글꼴 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    /* 색상 팔레트 - 한 가지 메인 색상으로 통일 */
+    --primary: #4361EE;
+    --primary-light: #6B86FD;
+    --primary-dark: #3A50C8;
+    --secondary: #EFF1FF;
+    --text: #21224A;
+    --text-light: #5A5B7D;
+    --border: #E8E9FD;
+    --shadow: rgba(67, 97, 238, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFFFFF;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 400;
+}
+
+/* 애니메이션 키프레임 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+/* 공통 스타일 */
+.text-center {
+    text-align: center;
+}
+
+/* 헤더 스타일 */
+header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.tagline {
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+    opacity: 0.95;
+    animation: fadeInUp 1.2s ease-out;
+    color: white;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* 콘텐츠 레이아웃 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* 섹션 공통 스타일 */
+section {
+    margin: 6rem 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+    position: relative;
+}
+
+section:first-of-type {
+    margin-top: 2rem;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 제목 스타일 */
+h2 {
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.01em;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* 텍스트 스타일 */
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text);
+}
+
+/* 카드 하이라이트 */
+.card-highlight {
+    background: transparent;
+    padding: 0 0 1.5rem 0;
+    margin: 0 0 3rem 0;
+    border-bottom: 1px solid rgba(67, 97, 238, 0.2);
+}
+
+.card-highlight p {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* 인트로 그리드 및 아이템 */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin: 3rem 0;
+}
+
+.intro-item {
+    padding: 0 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: var(--transition);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    margin-bottom: 1rem;
+}
+
+.intro-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--primary);
+    background: var(--secondary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.intro-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.intro-item p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* MRC 의미 박스 스타일 */
+.meaning-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.meaning-box {
+    flex: 1;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.meaning-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.meaning-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 60%;
+    background: var(--primary);
+    border-radius: 0 0 8px 0;
+}
+
+.meaning-box h3 {
+    position: relative;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+}
+
+.meaning-box h3 span {
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Letters Effect 스타일 */
+.meaning-box h3 .letter {
+    display: inline-block;
+    opacity: 1;
+    max-width: 1em;
+    transition: all 0.5s ease-in-out;
+}
+
+.meaning-box h3 .letter.ghost {
+    opacity: 0;
+    max-width: 0;
+}
+
+/* 요약/상세 내용 토글 스타일 */
+.summary {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--primary);
+    transition: var(--transition);
+    font-weight: 600;
+    z-index: 2;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.toggle-btn:hover {
+    color: var(--primary-dark);
+}
+
+.detail-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.6s ease;
+    opacity: 0;
+    margin-left: 1.5rem;
+}
+
+.expanded .detail-content {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.expanded .toggle-btn {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+/* 프로젝트 섹션 */
+.project-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+    position: relative;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.08);
+}
+
+.project-image img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 2rem;
+}
+
+.project-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.project-content p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.project-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* 결론 부분 */
+.conclusion {
+    margin-top: 5rem;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 0 0 5rem 0;
+    transition: var(--transition);
+    opacity: 0;
+    position: relative;
+}
+
+.conclusion::before {
+    content: '';
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: var(--border);
+}
+
+.conclusion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.conclusion p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0;
+}
+
+/* 신청링크 섹션 */
+#join {
+    margin-top: 0;
+    position: relative;
+    background: var(--primary);
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 6rem 2rem;
+    color: white;
+}
+
+#join h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#join h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+}
+
+.join-info {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.join-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.join-btn {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.01em;
+    transform: translateY(0);
+    font-size: 1.1rem;
+}
+
+.join-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+/* 애니메이션 클래스 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 미디어 쿼리 */
+@media (min-width: 576px) {
+    .container {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        font-size: 6rem;
+    }
+    
+    .tagline {
+        font-size: 1.5rem;
+    }
+    
+    .intro-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .meaning-container {
+        flex-direction: row;
+    }
+    
+    .project-card {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+    
+    .project-image {
+        width: 40%;
+        flex-shrink: 0;
+    }
+    
+    .project-content {
+        width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        padding: 3rem;
+    }
+    
+    section {
+        margin: 8rem 0;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    .meaning-box h3 {
+        font-size: 2.2rem;
+    }
+    
+    .meaning-box h3 span {
+        font-size: 3rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* 모바일 환경에서 글자 크기 조정 */
+@media (max-width: 768px) {
+    .meaning-box h3 {
+        font-size: 1.8rem;
+    }
+    
+    .meaning-box h3 span {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .meaning-box h3 {
+        font-size: 1.6rem;
+    }
+    
+    .meaning-box h3 span {
+        font-size: 2rem;
+    }
+    
+    .meaning-box h3 .letter {
+        max-width: 0.8em;
+    }
+}
