@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몽유도원도 반환 캠페인</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #FDFBF5; }
+        .font-serif { font-family: 'Noto Serif KR', serif; }
+        .tab-active { border-color: #A0522D; background-color: #F5EADD; color: #5B3A29; font-weight: 700; }
+        .tab-inactive { border-color: #D2B48C; background-color: #FFFFFF; color: #6B7280; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3">
+            <h1 class="text-xl md:text-2xl font-bold font-serif text-[#5B3A29]">몽유도원도, 우리 품으로</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-[50vh] md:h-[60vh] flex items-center justify-center text-center text-white bg-black">
+            <div class="absolute inset-0"><img src="./다운로드.jpg" alt="[몽유도원도 이미지]" class="w-full h-full object-cover opacity-50"></div>
+            <div class="relative z-10 p-6">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight shadow-text">안평대군의 꿈, <br class="md:hidden">이제는 우리 품으로 돌아와야 할 시간</h2>
+            </div>
+        </section>
+
+        <section id="intro" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center mb-10">
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-[#5B3A29]">몽유도원도(夢遊桃源圖)란?</h3>
+                    <p class="mt-4 text-lg text-gray-600">조선의 화가 안견이 안평대군의 꿈 이야기를 듣고 사흘 만에 완성한 전설적인 그림입니다. 현재 우리 곁에 없는 이 위대한 문화유산의 이야기를 소개합니다.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="./다운로드.jpg" alt="[몽유도원도의 일부 이미지]" class="w-full h-full object-cover"></div>
+                    <div>
+                        <div class="bg-amber-50 p-6 rounded-lg">
+                           <h4 class="text-2xl font-serif font-bold text-[#8B4513]">꿈을 그린 그림</h4>
+                           <p class="mt-3 text-base leading-relaxed text-gray-700">1447년, 세종의 셋째 아들 안평대군이 복숭아꽃 만발한 이상향을 거니는 꿈을 꿉니다. 그는 당대 최고의 화가였던 안견에게 자신의 꿈을 설명했고, 안견은 그 이야기를 바탕으로 단 3일 만에 비단 위 수묵담채로 꿈속 풍경을 완벽하게 그려냈습니다. 이것이 바로 현실과 꿈의 경계를 넘나드는 독창적인 구성을 자랑하는 '몽유도원도'입니다.</p>
+                        </div>
+                         <div class="mt-4 text-sm text-gray-500">
+                            <p><span class="font-bold">제작연도:</span> 1447년</p>
+                            <p><span class="font-bold">크기:</span> 38.7 x 106.5 cm (두루마리)</p>
+                            <p><span class="font-bold">현재 소장처:</span> 일본 덴리대학 중앙도서관</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="value" class="py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center mb-10">
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-[#5B3A29]">우리가 잃어버린 가치</h3>
+                    <p class="mt-4 text-lg text-gray-600">몽유도원도는 단순한 그림 한 점이 아닙니다. 이 그림이 왜 조선 초기 최고의 걸작으로 불리는지, 그 안에 담긴 다층적인 가치를 직접 확인해보세요. 각 항목을 클릭하여 자세한 내용을 볼 수 있습니다.</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="flex border-b border-gray-300">
+                        <button id="tab-masterpiece" class="tab-btn flex-1 py-3 px-2 text-center text-sm md:text-base border-b-2 transition-colors duration-300 tab-active">최고의 걸작</button>
+                        <button id="tab-art" class="tab-btn flex-1 py-3 px-2 text-center text-sm md:text-base border-b-2 transition-colors duration-300 tab-inactive">종합 예술</button>
+                        <button id="tab-history" class="tab-btn flex-1 py-3 px-2 text-center text-sm md:text-base border-b-2 transition-colors duration-300 tab-inactive">역사의 기록</button>
+                    </div>
+                    <div id="content-masterpiece" class="tab-content py-6 px-2"><h4 class="text-xl font-bold font-serif text-[#8B4513] mb-3">조선 초기 산수화의 정점</h4><p class="text-gray-700 leading-relaxed">안견의 독창적인 화풍이 집대성된 작품으로, 웅장하면서도 환상적인 분위기를 자아냅니다. 여러 시점을 하나의 화면에 담아내는 과감한 구성과 필법은 후대 화가들에게 큰 영향을 주었으며, 현재까지도 한국 미술사상 최고의 산수화로 평가받고 있습니다.</p></div>
+                    <div id="content-art" class="tab-content py-6 px-2 hidden"><h4 class="text-xl font-bold font-serif text-[#8B4513] mb-3">시(詩)·서(書)·화(畵)의 결합</h4><p class="text-gray-700 leading-relaxed">그림 자체의 가치뿐만 아니라, 그림 앞뒤로 안평대군이 직접 쓴 발문과 당대 최고 문장가 20여 명이 쓴 찬사가 함께 붙어있습니다. 아름다운 그림, 명필가의 글씨, 문인들의 시가 어우러져 15세기 조선 문화의 정수를 보여주는 완벽한 종합예술품입니다.</p></div>
+                    <div id="content-history" class="tab-content py-6 px-2 hidden"><h4 class="text-xl font-bold font-serif text-[#8B4513] mb-3">15세기, 시대의 이상을 담다</h4><p class="text-gray-700 leading-relaxed">몽유도원도는 안평대군 개인의 꿈을 넘어, 당시 조선의 지식인들이 동경했던 이상 세계(理想世界)를 시각적으로 구현한 것입니다. 이 그림을 통해 우리는 15세기 조선의 문화적 역량과 그들이 꿈꾸었던 세계관을 엿볼 수 있는 귀중한 역사 자료입니다.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="action" class="py-12 md:py-16 bg-amber-50/50">
+            <div class="container mx-auto px-6">
+                 <div class="max-w-4xl mx-auto text-center mb-10">
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-[#5B3A29]">캠페인 참여하기</h3>
+                    <p class="mt-4 text-lg text-gray-600">여러분의 작은 행동 하나하나가 모여 큰 변화를 만들 수 있습니다. 아래 방법들을 통해 우리의 목소리를 세상에 알려주세요.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl bg-white transition-shadow duration-300"><div class="text-4xl text-[#A0522D] mb-4">💬</div><h4 class="text-xl font-bold font-serif mb-2">SNS 챌린지 참여</h4><p class="text-gray-600 mb-4">'나의 꿈, 우리의 꿈' 챌린지에 동참하여 몽유도원도 반환의 염원을 널리 알려주세요.</p><p class="font-mono bg-gray-100 p-2 rounded">#몽유도원도_우리품으로</p></div>
+                    <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl bg-white transition-shadow duration-300"><div class="text-4xl text-[#A0522D] mb-4">✍️</div><h4 class="text-xl font-bold font-serif mb-2">온라인 서명 운동</h4><p class="text-gray-600 mb-4">몽유도원도 반환을 촉구하는 온라인 서명에 동참하여 우리의 단결된 의지를 보여주세요.</p><a href="https://www.overseaschf.or.kr" target="_blank" class="inline-block bg-[#8B4513] text-white font-bold py-2 px-6 rounded-full hover:bg-[#A0522D] transition-colors">서명 페이지 가기</a></div>
+                    <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl bg-white transition-shadow duration-300"><div class="text-4xl text-[#A0522D] mb-4">❤️</div><h4 class="text-xl font-bold font-serif mb-2">이야기 공유하기</h4><p class="text-gray-600 mb-4">이 페이지를 친구와 가족에게 공유하여 몽유도원도의 가치와 반환의 필요성을 함께 알려주세요.</p><button onclick="sharePage()" class="inline-block bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-full hover:bg-gray-300 transition-colors">페이지 공유하기</button></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#5B3A29] text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-serif text-lg mb-2">국외소재문화유산 반환 캠페인</p>
+            <p class="text-sm text-amber-100/80">이 페이지는 '국외소재문화유산 반환 캠페인 광고' 기획서를 바탕으로 제작되었습니다.</p>
+            <div class="mt-4 text-xs text-amber-100/60"><p>자료 출처:</p><p>국외소재문화재재단, 한국민족문화대백과사전, 위키백과, 문화재청 국가문화유산포털</p></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tabs
+            const tabs = { masterpiece: document.getElementById('tab-masterpiece'), art: document.getElementById('tab-art'), history: document.getElementById('tab-history') };
+            const contents = { masterpiece: document.getElementById('content-masterpiece'), art: document.getElementById('content-art'), history: document.getElementById('content-history') };
+            const allTabs = Object.values(tabs);
+            const allContents = Object.values(contents);
+
+            function switchTab(tabKey) {
+                allTabs.forEach(tab => { tab.classList.remove('tab-active'); tab.classList.add('tab-inactive'); });
+                allContents.forEach(content => { content.classList.add('hidden'); });
+                tabs[tabKey].classList.add('tab-active');
+                tabs[tabKey].classList.remove('tab-inactive');
+                contents[tabKey].classList.remove('hidden');
+            }
+
+            tabs.masterpiece.addEventListener('click', () => switchTab('masterpiece'));
+            tabs.art.addEventListener('click', () => switchTab('art'));
+            tabs.history.addEventListener('click', () => switchTab('history'));
+        });
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '몽유도원도 반환 캠페인',
+                    text: '우리의 위대한 문화유산, 몽유도원도를 되찾는 일에 함께해주세요!',
+                    url: window.location.href,
+                }).catch(console.error);
+            } else {
+                alert('이 브라우저에서는 공유 기능을 지원하지 않습니다. 페이지 주소를 복사하여 공유해주세요.');
+            }
+        }
+    </script>
+</body>
+</html>
